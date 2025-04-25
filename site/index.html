@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to Publish on Autonomi Network</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav">
+
+<div class="logo">
+	  <img class="logo-img" src="images/pubant-logo.png" height=50px width=auto></img>
+  <span style="color: rgb(35, 42, 89);">Pub</span><span style="color: #ED1C24;">Ant</span><span style="color: #000;">.com</span>
+
+  <span class="tagline">Publish your Website. Forever Online. Impossible to take down</span>
+</div>
+
+
+	  <div class="menu">
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+	  <img class="left-sidebar" src="images/pubant2-mid.jpg" height="500px" width=auto></img>	  
+	  <h1>
+      How to Publish Your Own<br />
+      Website on <span class="highlight">Autonomi Network</span>
+    </h1>
+    <p>
+      Discover how you can host and share your content on a network that’s<br />
+      <strong>controlled by no one</strong> and <strong>owned by us all</strong>.
+    </p>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="content">
+    <h2>Why Publish a Website on Autonomi Network?</h2>
+    <p>
+    Autonomi Network lets you publish a website that is anonymous, censorship-proof, and permanent. Once uploaded, your site cannot be taken down — not by governments, corporations, or even the developers of Autonomi. You pay once to publish, and your content lives on the decentralized network forever, immune to takedowns, surveillance, or interference.
+    </p>
+
+    <h2>Steps to Get Started</h2>
+    <ol>
+      <li>
+        <strong>Download the anttp Binary:</strong><br />
+        Head to the <a href="https://github.com/traktion/AntTP/releases" target="_blank">AntTP GitHub Releases</a> and download the binary for your OS (Linux, macOS, or Windows).
+      </li>
+      <li>
+        <strong>Run the anttp binary:</strong><br />
+        This starts AntTP which lets you read websites on the Autonomi network. You can let this run in the background.
+      </li>
+      <li>
+        <strong>To upload your website, first: Install antup and the client:</strong><br />
+	For Linux/Mac OS (Terminal):<br />
+	<code>curl -sSL https://raw.githubusercontent.com/maidsafe/antup/main/install.sh | bash -s -- --client</code><br />
+	For Windows (Powershell):<br />
+	<code>iex (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/maidsafe/antup/main/install.ps1")</code><br />
+
+	Then you can run<br />
+	<code>antup client</code><br />
+	Which will install "ant" so that you can upload your website to the Autonomi network.  
+      </li>
+      <li>
+        <strong>Build Your Website Directory:</strong><br />
+        Structure your site like a normal static site (e.g. folders, HTML, CSS, <code>index.html</code>, etc.).
+	Let's say you've made a website at <code>~/mysite</code> and made a web page at <code>~/mysite/index.html</code>
+      </li>
+      <li>
+        <strong>Upload as an Archive:</strong><br />
+        Run:<br />
+        <code>ant file upload -p -x ~/mysite</code><br />
+        This will upload your folder as an archive to the network.
+      </li>
+      <li>
+	      To see your uploads, run: <br />
+	      <code>ant file list</code><br />
+      And you will see your archive address like this:<br />
+      <code>Retrieving local user data...<br />
+✅ You have 1 public file archive(s):
+mysite: bc8c094cf9ee85d354479d854e4ca7acf885b208d47000aafa7160e788e1da7f
+     </code><br />
+     This address that starts with <code>bc8c09...</code> is your website's base address.
+      </li>
+      <li>
+        <strong>Access Your Site:</strong><br />
+        Now you can access your website by entering this address in your internet browser:<br />
+	<code>http://localhost:8080/bc8c094cf9ee85d354479d854e4ca7acf885b208d47000aafa7160e788e1da7f/mysite/index.html</code><br />
+	Or you can setup a proxy to localhost:8080 in e.g your Firefox browser, which will let you access the website by entering this address:<br />
+	<code>http://bc8c094cf9ee85d354479d854e4ca7acf885b208d47000aafa7160e788e1da7f/mysite/index.html</code>
+      </li>
+    </ol>
+
+    <p>
+      Congratulations! Your site is now hosted on the Autonomi Network: decentralized, persistent and censorship-free.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    Autonomi Community
+  </footer>
+</body>
+</html>
+
