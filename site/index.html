@@ -3,15 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <title>How to Publish on Autonomi Network</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
+
+
+  <meta property="og:title" content="Publish your Website on Autonomi." />
+  <meta property="og:description" content="Forever online. Impossible to take down." />
+  <meta property="og:image" content="https://pubant.com/images/pubant2-mid.jpg" />
+  <meta property="og:url" content="https://pubant.com" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Publish your Website on Autonomi." />
+  <meta name="twitter:description" content="Forever online. Impossible to take down." />
+  <meta name="twitter:image" content="https://pubant.com/images/pubant2-mid.jpg" />
+
+
+
 </head>
 <body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('code').forEach((codeEl) => {
+      // Skip if already processed
+      if (codeEl.closest('.code-wrapper')) return;
+
+      const wrapper = document.createElement('span');
+      wrapper.className = 'code-wrapper';
+
+      const button = document.createElement('button');
+      button.className = 'copy-btn';
+      button.textContent = 'Copy';
+
+      button.addEventListener('click', () => {
+        navigator.clipboard.writeText(codeEl.textContent).then(() => {
+          button.textContent = 'Copied!';
+          setTimeout(() => (button.textContent = 'Copy'), 1500);
+        });
+      });
+
+      codeEl.parentNode.insertBefore(wrapper, codeEl);
+      wrapper.appendChild(codeEl);
+      wrapper.appendChild(button);
+    });
+  });
+</script>
+
 
   <!-- Navigation -->
   <div class="nav">
 
 <div class="logo">
-	  <img class="logo-img" src="images/pubant-logo.png" height=50px width=auto></img>
+	  <img class="logo-img" src="/images/pubant-logo.png" height=50px width=auto></img>
   <span style="color: rgb(35, 42, 89);">Pub</span><span style="color: #ED1C24;">Ant</span><span style="color: #000;">.com</span>
 
   <span class="tagline">Publish your Website. Forever Online. Impossible to take down</span>
@@ -19,12 +61,16 @@
 
 
 	  <div class="menu">
+		  <a href="/index.html">Publish</a>
+		  <a href="/what-autonomi/index.html">What is Autonomi?</a>
+		  <a href="/what-ant/index.html">What is ANT?</a>
+		  <a href="/explore/index.html">Explore the Network</a>
     </div>
   </div>
 
   <!-- Hero Section -->
   <section class="hero">
-	  <img class="left-sidebar" src="images/pubant2-mid.jpg" height="500px" width=auto></img>	  
+	  <img class="left-sidebar" src="/images/pubant2-mid.jpg" height="500px" width=auto></img>	  
 	  <h1>
       How to Publish Your Own<br />
       Website on <span class="highlight">Autonomi Network</span>
@@ -44,16 +90,45 @@
 
     <h2>Steps to Get Started</h2>
     <ol>
+	      <h3 id="setup-anttp">Setup AntTP to read websites on Autonomi</h3>
+	    <section class="section">
+	      First you will need to be able to read content on the Autonomi Network, and for that you will need AntTP (anttp). <br />
       <li>
         <strong>Download the anttp Binary:</strong><br />
         Head to the <a href="https://github.com/traktion/AntTP/releases" target="_blank">AntTP GitHub Releases</a> and download the binary for your OS (Linux, macOS, or Windows).
       </li>
       <li>
         <strong>Run the anttp binary:</strong><br />
-        This starts AntTP which lets you read websites on the Autonomi network. You can let this run in the background.
+	For Windows, open PowerShell.<br />
+	For Linux/Mac, open Terminal.<br />
+	use <code2>cd</code2> to change directory to where you have the anttp file.<br />
+	run <code2>./anttp</code2>
+	This starts AntTP which lets you read websites on the Autonomi network. You can let this run in the background.
+	<h2>CONGRATULATIONS!</h2>
+	Now that you have AntTP running, you can read the rest of this PubAnt site using the Autonomi Network.
+	You can access it by entering this address in your browser:
+	<code>localhost:8080/7c8662c127e82ab5dfc1056f14d9a5e9f22db325b7cf4222470a77faff9595d7/site/index.html</code><br />
+	But it might not look right, so the best way is to go to Network Settings in your (Firefox?) browser and change proxy settings to 127.0.0.1 port: 8080. Look at this <a href="/images/firefox-settings.jpg">image</a> to see the settings.<br />
+	After changing the proxy settings, you can access the site by adding <code2>http://</code2> before the address, like this:<br />
+	<code>http://7c8662c127e82ab5dfc1056f14d9a5e9f22db325b7cf4222470a77faff9595d7/site/index.html</code><br />
+	Remember that after changing proxy settings, you will not be able to access "normal" websites in your Firefox browser, until you remove the proxy settings again.
+
+      </li>
+      
+	    </section>
+
+    </ol>
+
+    <ol>
+	      <h3>How to publish a website (advanced)</h3>
+	    <section class="section">
+
+      <li>
+	      <strong>Fund your wallet: </strong>
+		      First, you will need <a href="/what-ant">ANT</a> Tokens and ETH on the Arbitrum Network.</strong><br />
       </li>
       <li>
-        <strong>To upload your website, first: Install antup and the client:</strong><br />
+	      <strong>Secondly, install antup and the client:</strong><br />
 	For Linux/Mac OS (Terminal):<br />
 	<code>curl -sSL https://raw.githubusercontent.com/maidsafe/antup/main/install.sh | bash -s -- --client</code><br />
 	For Windows (Powershell):<br />
@@ -61,35 +136,48 @@
 
 	Then you can run<br />
 	<code>antup client</code><br />
-	Which will install "ant" so that you can upload your website to the Autonomi network.  
+	Which will install the <code2>ant</code2> client so that you can upload your website to the Autonomi network.  
       </li>
+
+      <li>
+	      <strong>Setup wallet:</strong><br />
+	      You must setup your wallet in the <code2>ant</code2> client by entering any of these commands:<br />
+	      <code>ant wallet create</code> if you want to create a new wallet<br />
+	      <code>ant wallet import PRIVATE_KEY</code> if you want to import a private key of a wallet you already have.<br />
+	      <p id="warning">ONLY USE SMALL AMOUNTS OF FUNDS IN THESE WALLETS.<br />
+	      DON'T SHARE YOUR PRIVATE KEY WITH ANYONE.</p>
+      </li>
+
       <li>
         <strong>Build Your Website Directory:</strong><br />
-        Structure your site like a normal static site (e.g. folders, HTML, CSS, <code>index.html</code>, etc.).
-	Let's say you've made a website at <code>~/mysite</code> and made a web page at <code>~/mysite/index.html</code>
+        Structure your site like a normal static site (e.g. folders, HTML, CSS, <code2>index.html</code2>, etc.).
+	Let's say you've made a website at <code2>~/site</code2> and made a web page at <code2>~/site/index.html</code2>
+        Or you can download this <a href="/site.zip">site.zip</a> file if you want to publish this PubAnt site.
       </li>
       <li>
         <strong>Upload as an Archive:</strong><br />
         Run:<br />
-        <code>ant file upload -p -x ~/mysite</code><br />
-        This will upload your folder as an archive to the network.
+        <code>ant file upload -p -x ~/site</code><br />
+        This will upload your folder as an archive to the network.< br/>
+After a successful upload you will see something like <code2>At address: d9e0edfbf...</code2>
+
       </li>
       <li>
-	      To see your uploads, run: <br />
+	      <strong> To see your uploads, run:</strong> <br />
 	      <code>ant file list</code><br />
       And you will see your archive address like this:<br />
       <code>Retrieving local user data...<br />
 ✅ You have 1 public file archive(s):
-mysite: bc8c094cf9ee85d354479d854e4ca7acf885b208d47000aafa7160e788e1da7f
+mysite: 7c8662c127e82ab5dfc1056f14d9a5e9f22db325b7cf4222470a77faff9595d7
      </code><br />
-     This address that starts with <code>bc8c09...</code> is your website's base address.
+     This address that starts with something like<code2>d9e0ed...</code2> is your website's address.
       </li>
       <li>
         <strong>Access Your Site:</strong><br />
         Now you can access your website by entering this address in your internet browser:<br />
-	<code>http://localhost:8080/bc8c094cf9ee85d354479d854e4ca7acf885b208d47000aafa7160e788e1da7f/mysite/index.html</code><br />
+	<code>http://localhost:8080/7c8662c127e82ab5dfc1056f14d9a5e9f22db325b7cf4222470a77faff9595d7/site/index.html</code><br />
 	Or you can setup a proxy to localhost:8080 in e.g your Firefox browser, which will let you access the website by entering this address:<br />
-	<code>http://bc8c094cf9ee85d354479d854e4ca7acf885b208d47000aafa7160e788e1da7f/mysite/index.html</code>
+	<code>http://7c8662c127e82ab5dfc1056f14d9a5e9f22db325b7cf4222470a77faff9595d7/site/index.html</code>
       </li>
     </ol>
 
@@ -97,7 +185,7 @@ mysite: bc8c094cf9ee85d354479d854e4ca7acf885b208d47000aafa7160e788e1da7f
       Congratulations! Your site is now hosted on the Autonomi Network: decentralized, persistent and censorship-free.
     </p>
   </section>
-
+  </section>
   <!-- Footer -->
   <footer>
     Autonomi Community

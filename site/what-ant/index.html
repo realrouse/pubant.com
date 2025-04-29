@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>What is ANT?</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('code').forEach((codeEl) => {
+      // Skip if already processed
+      if (codeEl.closest('.code-wrapper')) return;
+
+      const wrapper = document.createElement('span');
+      wrapper.className = 'code-wrapper';
+
+      const button = document.createElement('button');
+      button.className = 'copy-btn';
+      button.textContent = 'Copy';
+
+      button.addEventListener('click', () => {
+        navigator.clipboard.writeText(codeEl.textContent).then(() => {
+          button.textContent = 'Copied!';
+          setTimeout(() => (button.textContent = 'Copy'), 1500);
+        });
+      });
+
+      codeEl.parentNode.insertBefore(wrapper, codeEl);
+      wrapper.appendChild(codeEl);
+      wrapper.appendChild(button);
+    });
+  });
+</script>
+
+
+  <!-- Navigation -->
+  <div class="nav">
+    <div class="logo">
+      <img class="logo-img" src="/images/pubant-logo.png" height=50px width=auto></img>
+      <span style="color: rgb(35, 42, 89);">Pub</span><span style="color: #ED1C24;">Ant</span><span style="color: #000;">.com</span>
+      <span class="tagline">Publish your Website. Forever Online. Impossible to take down</span>
+    </div>
+
+    <div class="menu">
+    <a href="/index.html">Publish</a>
+                  <a href="/what-autonomi/index.html">What is Autonomi?</a>
+                  <a href="/what-ant/index.html">What is ANT?</a>
+                  <a href="/explore/index.html">Explore the Network</a>
+</div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img class="left-sidebar" src="/images/pubant2-mid.jpg" height="500px" width=auto></img>	  
+    <h1>
+      What is <span class="highlight">ANT</span>?
+    </h1>
+    <p>
+      The Ant Token (ANT) powers the Autonomi Network — securing the system, enabling uploads, and rewarding the community.
+    </p>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="content">
+    <h2>What is ANT?</h2>
+    <p>
+      ANT (Ant Token) is the digital token that fuels the Autonomi Network. It’s used to pay for uploading content, incentivizing network participants,
+      and ensuring that the network remains robust, decentralized, and spam-free.
+    </p>
+
+    <h2>ANT Specifications:</h2>
+		    <ul>
+			    <li>Blockchain Network: Arbitrum One (ETH L2)</li>
+			    <li>ERC20 Standard</li>
+			    <li>Token Contract Address:<br />
+				    <code>0xa78d8321B20c4Ef90eCd72f2588AA985A4BDb684</code> <a href="https://arbiscan.io/token/0xa78d8321b20c4ef90ecd72f2588aa985a4bdb684" target="_blank">EtherScan</a></li>
+			    <li>Price Stats at <a href="https://www.dextools.io/app/en/arbitrum/pair-explorer/0xbf24f38243392a0b4b7a13d10dbf294f40ae401b" target="_blank">DexTools</a></li>
+
+		    </ul>
+
+    <h2>What ANT is Used For</h2>
+    <ul>
+      <li><strong>Publishing Content:</strong> You use a small amount of ANT when you upload websites, files, or apps to the network.</li>
+      <li><strong>Incentivizing Nodes:</strong> Network operators (people who run nodes) are rewarded with ANT for helping to store and serve content.</li>
+      <li><strong>Preventing Spam:</strong> By requiring a minimal cost to upload, ANT protects the network from spam and abuse.</li>
+      <li><strong>Economic Security:</strong> ANT encourages honest participation, making attacks expensive and unprofitable.</li>
+    </ul>
+
+    <h2>How to Get ANT</h2>
+    <p>
+      ANT can be earned by contributing storage and bandwidth to the network as a Node runner, or obtained through decentralized or centralized cryptocurrency exchanges. The network is designed to be open and fair for all participants.
+    </p>
+    <h3>Exchanges</h3>
+    <p>
+
+    Can be found at <a href="https://www.coingecko.com/en/coins/autonomi" target="_blank">CoinGecko</a>
+    </p>
+    <h3>Become a Node runner, earn ANT</h3>
+    <p>More info can be found at Autonomi's <a href="https://docs.autonomi.com/node" target="_blank">website</a></p>
+
+    <h2>Why ANT Matters</h2>
+    <p>
+      Without ANT, the network couldn’t function. It balances incentives and ensures that Autonomi stays self-sustaining,
+      decentralized, and resistant to abuse — empowering users without relying on any central authority.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    Autonomi Community
+  </footer>
+</body>
+</html>
+

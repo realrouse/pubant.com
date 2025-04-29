@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Explore the Websites of Autonomi</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('code').forEach((codeEl) => {
+      // Skip if already processed
+      if (codeEl.closest('.code-wrapper')) return;
+
+      const wrapper = document.createElement('span');
+      wrapper.className = 'code-wrapper';
+
+      const button = document.createElement('button');
+      button.className = 'copy-btn';
+      button.textContent = 'Copy';
+
+      button.addEventListener('click', () => {
+        navigator.clipboard.writeText(codeEl.textContent).then(() => {
+          button.textContent = 'Copied!';
+          setTimeout(() => (button.textContent = 'Copy'), 1500);
+        });
+      });
+
+      codeEl.parentNode.insertBefore(wrapper, codeEl);
+      wrapper.appendChild(codeEl);
+      wrapper.appendChild(button);
+    });
+  });
+</script>
+
+
+  <!-- Navigation -->
+  <div class="nav">
+    <div class="logo">
+      <img class="logo-img" src="/images/pubant-logo.png" height=50px width=auto></img>
+      <span style="color: rgb(35, 42, 89);">Pub</span><span style="color: #ED1C24;">Ant</span><span style="color: #000;">.com</span>
+      <span class="tagline">Publish your Website. Forever Online. Impossible to take down</span>
+    </div>
+
+    <div class="menu">
+  <a href="/index.html">Publish</a>
+                  <a href="/what-autonomi/index.html">What is Autonomi?</a>
+                  <a href="/what-ant/index.html">What is ANT?</a>
+                  <a href="/explore/index.html">Explore the Network</a>
+  </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img class="left-sidebar" src="/images/pubant2-mid.jpg" height="500px" width=auto></img>	  
+    <h1>
+      Explore the Websites<br />
+      of <span class="highlight">Autonomi</span>
+    </h1>
+    <p>
+      Dive into the decentralized world of Autonomi, where sites are unstoppable, anonymous, and truly free.
+    </p>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="content">
+    <h2>Discover Unique Websites</h2>
+    <p>
+      Autonomi is in the beginner stage, so not much exists yet! However, soon you will see everything from blogs and documentation to apps and creative projects.
+      Every site is hosted on a decentralized network that nobody can take down.
+    </p>
+
+    <h2>How to Visit Websites on Autonomi</h2>
+    <ol>
+      <li>
+        <strong>Start AntTP:</strong><br />
+	Follow the <a href="/site/index.html#setup-anttp">instructions</a> on how to install AntTP.<br />
+        Make sure you have the <code2>anttp</code2> binary running on your device. This lets your browser connect to the network.
+      </li>
+      <li>
+        <strong>Visit a Site:</strong><br />
+        Enter a website address into your browser, such as:<br />
+        <code>localhost:8080/0cebc6aae92c845cecddb41fb33aae3251c7aaf97d0cf47c33630cb081e315e1/site-temp/index.html</code><br />
+        or other addresses shared by the community.
+      </li>
+      <li>
+        <strong>Bookmark Your Favorites:</strong><br />
+        Decentralized websites may have long addresses. Bookmark the ones you like for easy access later!
+      </li>
+    </ol>
+
+    <h2>Find More Content</h2>
+    <p>
+      New websites and projects are popping up on Autonomi all the time! You can discover new content through community forums,
+      chat groups, and curated lists created by Autonomi users.
+      <li><a href="https://discord.gg/9q3XqMKK46">Discord</a></li>
+      <li><a href="https://forum.autonomi.community/">Autonomi Forum</a></li>
+      <li><a href="https://t.me/autonomi25">Telegram</a> </li>
+    </p>
+   
+    <h3>Bookmark PubAnt.com for curated content lists later!</h3>
+
+    <h2>Want to Publish Your Own?</h2>
+    <p>
+      It's easy! Check out the <a href="/site/index.html">Publish</a> page to learn how to upload your own website and be part of the growing decentralized web.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    Autonomi Community
+  </footer>
+</body>
+</html>
+

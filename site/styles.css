@@ -5,10 +5,27 @@
   box-sizing: border-box;
 }
 
+h3 {
+color:#ED1C24
+}
+
+
+
+
+.section {
+background-color: rgba(0,0,0,0.045);
+padding:15px 55px 15px 55px;
+border-radius:20px;
+margin:10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+}
+
 .tagline {
 font-weight:normal;
 font-size:0.8rem;
-margin-left: 50px;
+margin-left: 30px;
+color:gray;
 }
 
 .left-sidebar {
@@ -33,9 +50,9 @@ align-items:center;
   top: 0;
   left: 0;
   width: 100%;
- /* display: flex;*/
   align-items: center;
   justify-content: space-between;
+ display: flex;
   padding: 1rem 2rem;
   background-color: #fff;
   border-bottom: 1px solid #eee;
@@ -50,7 +67,7 @@ align-items:center;
 }
 
 .nav .menu {
- /* display: flex;*/
+  display: flex;
 
 }
 
@@ -58,12 +75,19 @@ align-items:center;
   margin-left: 1.5rem;
   text-decoration: none;
   color: #1D1D1D;
-  font-weight: 500;
+  font-weight: bold;
   transition: color 0.3s;
+  background-color:#FDF6E4;
+  padding: 25px 20px 25px 20px;
+  border-radius:15px;
+
 }
 
 .nav .menu a:hover {
   color: #ED1C24;
+  background-color:#ffecba;
+  transition: all 0.3s;
+  transform: scale(1.03);
 }
 
 
@@ -141,6 +165,13 @@ margin-top: 80px;
   margin-bottom: 1rem;
 }
 
+#warning{
+color:red;
+}
+ h2 a {
+ color:#ED1C24;
+ }
+
 /* Footer */
 footer {
   text-align: center;
@@ -157,3 +188,47 @@ code {
   font-size: 0.95em;
 }
 
+
+:target {
+  scroll-margin-top: 125px; /* Adjust to how far down you want it to land */
+}
+
+  .code-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 4px;
+    left: -45px;
+    font-size: 12px;
+    padding: 2px 6px;
+    background: #FFF;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    color:#000;
+  }
+
+  .code-wrapper:hover .copy-btn {
+    opacity: 1;
+  }
+
+code2 {
+  background-color: rgba(0, 0, 0, 0.15); /* Light transparent gray */
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+  font-size: 0.95em;
+
+}
+
+/*  code {
+    background: #f4f4f4;
+    padding: 0.5em;
+    border-radius: 4px;
+    font-family: monospace;
+  }*/
